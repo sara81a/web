@@ -93,7 +93,7 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
 <div class="container">
 <h1 class="BookHead"> Set available appointment! </h1>
 
-<form class="input" method="post" >
+<form class="input" method="post"  >
 
 
 	
@@ -112,12 +112,12 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
 
 
 <div class="DateTime">
-	<label for="date&time" ><strong>Enter the Date &amp; Time :</strong> </label>
+	<label for="date&time" ><strong>Enter the Date :</strong> </label>
 	<input type="date" id="dateTime" name="date" required>
     </div>
 	<br><br>
 	<div class="DateTime">
-		<label for="date&time" ><strong>Enter the Date &amp; Time :</strong> </label>
+		<label for="date&time" ><strong>Enter the Time :</strong> </label>
 		<input type="time" id="Time" name="time" required>
 		</div>
 	
@@ -210,5 +210,7 @@ if(mysqli_query($db,$qry)){
 }else{
     echo mysqli_error($db);
 }
+
 }
+mysqli_close($db);
 ?>
