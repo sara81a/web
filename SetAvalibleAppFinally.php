@@ -1,10 +1,14 @@
+
 <?php 
 
 
-print("hi2kak");
-print("sara");
-?>
+//$db=mysql_connect("localhost","root","","webs");
+$host="localhost";   $duus="root";
+$dbp="";     $dbname="webs";
 
+$db=mysqli_connect($host,$duus,$dbp,$dbname);
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +17,7 @@ print("sara");
 	<title>Set app finally</title>
 	<link href="add-set.css" rel="stylesheet"/> 
 	
-
+    
 	 <!-- Font Awesome -->
      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"rel="stylesheet"/> 
 
@@ -95,11 +99,11 @@ print("sara");
 	
 		<div class="selectPet">
 		<strong>Select your service :</strong>
-		<select id="selection" >
-			<option value="0" data-subtitle="--" data-left="MaxPic.jpeg" selected>--Select your service--</option>
-			<option value="1" data-subtitle="checkup" data-left="MaxPic.jpeg" >checkup</option>
-			<option value="2" data-subtitle="Grooming" data-left=".jpeg" >Grooming</option>
-			<option value="3" data-subtitle="boarding" data-left=".jpeg" >Boarding</option>
+		<select id="selection" name="service">
+			<option value="" data-subtitle="--" data-left="MaxPic.jpeg" selected>--Select your service--</option>
+			<option value="checkup" data-subtitle="checkup" data-left="MaxPic.jpeg" >checkup</option>
+			<option value="Grooming" data-subtitle="Grooming" data-left=".jpeg" >Grooming</option>
+			<option value="boarding" data-subtitle="boarding" data-left=".jpeg" >Boarding</option>
 		</select>
 	</div>
 
@@ -109,19 +113,19 @@ print("sara");
 
 <div class="DateTime">
 	<label for="date&time" ><strong>Enter the Date &amp; Time :</strong> </label>
-	<input type="date" id="dateTime" name="date&time" required>
+	<input type="date" id="dateTime" name="date" required>
     </div>
 	<br><br>
 	<div class="DateTime">
 		<label for="date&time" ><strong>Enter the Date &amp; Time :</strong> </label>
-		<input type="time" id="Time" name="date&time" required>
+		<input type="time" id="Time" name="time" required>
 		</div>
 	
     
 
 	<br><br>
     <label for="Note" ><strong>Add Note :</strong> <br>
-	<textarea name="Note" rows="4" cols="36" id="Note"Enter your Note about your Appointment></textarea></label>
+	<textarea name="note" rows="4" cols="36" id="Note"Enter your Note about your Appointment></textarea></label>
 
 	<br><br>
 
@@ -130,7 +134,7 @@ print("sara");
     
 	
 	<div class="end" >
-	<input id="submit" value="submit" type="submit" class="toogle" >
+	<input id="submit" name="submit" value="submit" type="submit" class="toogle" >
 	<input id="reset" value="reset" type="reset" >
     </div>  	
 
@@ -189,3 +193,22 @@ print("sara");
 
 </body>
 </html>
+<?php
+
+if(isset($_POST['submit'])){
+$service=$_POST['service'];
+$datee=$_POST['date'];
+$time=$_POST['time'];
+$notes=$_POST['note'];
+
+
+$qry="INSERT  Into setappointment values(null,'$service' ,'$datee', '$time' ,'$notes')";
+
+if(mysqli_query($db,$qry)){
+    echo  '<script>alert("added sucsses");</script>';
+//header('location:SetAvalibleAppFinally.php ');
+}else{
+    echo mysqli_error($db);
+}
+}
+?>
