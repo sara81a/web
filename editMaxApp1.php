@@ -7,21 +7,18 @@ die("<p>the connection error</p>");
 
 if(!isset($_GET['id'] )){
     die('id not provided');
+
 }
 $id=$_GET['id'];
 
 $query="SELECT * FROM  setappointment  where AppointmentID= '$id' ";
 
-
-
-
 if(!($result=mysqli_query($db2,$query)))
 die("<p>the qurey error</p>");
 
-
 $row=mysqli_fetch_array($result);
 //mysqli_free_result($result);
-//mysqli_close($db2);
+mysqli_close($db2);
 //print_r($pizzas);
 ?>
 
@@ -50,14 +47,7 @@ $row=mysqli_fetch_array($result);
             <nav class="navbar">
                 <ul class="nav-list">
                     <li  ><a href="home-manager.html">Home</a>
-                       <!-- <ul class="sub-menu" id="sub-menu-arrow"> 
-                          <li > <a href="./MahaB Add A Service Page.html">Add a New Service</a></li>
-                          <li><a href="./availabel apointment manager.html">Set a New Appointment</a></li>
-                          <li><a href="./request list manager.html">View Requests List</a></li>
-          
-                          <li><a href="./upcoming and previous manager.html">View Appointments List</a> </li>
-                  
-                        </ul>-->
+                     
                       </li>
                       
                       
@@ -65,26 +55,21 @@ $row=mysqli_fetch_array($result);
 
                    <li><a href="AboutusM.html">About Us</a></li> 
                     <li class="move-right-btn" ><a href="main.html"id="profile"><i class="fas fa-sign-out" ></i></a>
-                       <!--  <ul class="sub-menu" id="sub-menu-arrow2"> 
-                            <li ><a href="#">View Profile</a></li>
-                            <li><a href="./LnadingPage.html">Sign Out</a></li>
-                    
-                          </ul>-->
+                      
                         </li>
                   </ul>
                 
-                <!-- ****if you're working on a pet owner view replace <i class="fa-solid fa-user-doctor"> with <i class="fa-solid fa-user"></i>  -->
+          
         
         
             </nav>
     
     </header>
     <section>
-        <!--<div class="ooo"><a href="max.html">Back</a></div>-->
        
       
         <div class="wrapper bg-white mt-sm-5">
-            <h4 class="pb-4 border-bottom" style="font-size: 40px; color: #ADD8E6; text-align: center; ">APPOINTMENT SETTINGS FOR MAX</h4>
+            <h4 class="pb-4 border-bottom" style="font-size: 40px; color: #ADD8E6; text-align: center; ">APPOINTMENT SETTINGS</h4>
 
             
            <!-- <div class="iimg">
@@ -93,47 +78,23 @@ $row=mysqli_fetch_array($result);
                  
                 </div>
                 <br><br>-->
-            <form  class="inputA" method = "POST" action="editMaxApp1.php?id=<?php echo $id; ?>" >
+                <br>
+            <form  class="inputA" method="POST" action="update.php?id=<?php echo $id; ?>" >
                 
             <div class="py-2">
             <div class="row py-2">
-                    <div class="col-md-6 pt-md-0 pt-3"> <label for="Date"> Date</label> <input type="date" class="bg-light form-control"  value="<?php echo $rows['date']; ?>"name="date"  required> </div>
+                    <div class="col-md-6 pt-md-0 pt-3"> <label for="Date"> Date</label> <input type="date" class="bg-light form-control"  value="<?php echo $row['date']; ?>"name="date"  required> </div>
                
                 </div></div>
-                <div class="row py-2">
-                    <div class="col-md-6"> <label for="country">service</label> <select name="country" id="country" class="bg-light"required>
-                            <option value="DENTAL CARE" >DENTAL CARE</option>
-                            <option value="HAIR CUT"selected>HAIR CUT</option>
-                            <option value="Grooming"selected>Grooming</option>
-                        
-                    </div>
-                        </select> </div>
-                        <div class="row py-2">
-                            <div class="col-md-6"> <label for="country">Time</label> <select name="country" id="country" class="bg-light"required>
-                                    <option value="Female" selected>4:30</option>
-                                    <option value="Male">7:15</option>
-                                    <option value="Male">10:00</option>
-                                    <option value="Male">11:40</option>
-                            </div>
-                                </select> </div>
                
-
-
-
-
-
-
-
-
-
-
+<br>
 
                <!-- <div class="row py-2">
                     <div class="col-md-6"> <label for="email">Service</label> <input type="text" class="bg-light form-control" value="Lionhead" placeholder="Pet's breed"required> </div>
 
                 </div>-->
                 <div class="row py-2">
-                    <div class="col-md-6"> <label for="country">service</label> <select name="country" id="country" class="bg-light"required>
+                    <div class="col-md-6"> <label for="service">service</label> <select id="service" class="bg-light"   value="<?php echo $row['service']; ?>"name="service" required>
                             <option value="DENTAL CARE" >DENTAL CARE</option>
                             <option value="HAIR CUT"selected>HAIR CUT</option>
                             <option value="Grooming"selected>Grooming</option>
@@ -148,26 +109,31 @@ $row=mysqli_fetch_array($result);
                                     <option value="Male">11:40</option>
                             </div>
                                 </select> </div>-->
+                                <br>
                                 <div class="py-2">
                            <div class="row py-2">
-                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> Time</label> <input type="time" class="bg-light form-control" required> </div>
+                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> Time</label> <input type="time" class="bg-light form-control" value="<?php echo $row['time']; ?>"name="time" required> </div>
                                </div></div>
-               
+               <br>
                                <div class="py-2">
                            <div class="row py-2">
-                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> Note</label> <input type="text" class="bg-light form-control" required> </div>
+                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> Note</label> <input type="text" class="bg-light form-control"   value="<?php echo $row['note']; ?>"name="note" required> </div>
                                </div></div>
                         
 
 
 
-                            </form>
+                            
                           </div>
 <br><br>
-                <div class="py-3 pb-4 border-bottom" > <button class="btn btn-primary mr-3" >Save</button> <button class="btn border button">Cancel</button> </div>
+                <div class="py-3 pb-4 border-bottom" > 
+                <!--  <button class="btn btn-primary mr-3" >Save</button> -->
+                    <input type="submit" name="submit"  class="btn border button">
+                <!--<button class="btn border button">Cancel</button> </div>-->
                
             </div>
         </div>
+        </form>
        <!-- <div class="pic"><img src="IMG_3875-removebg-preview.png" alt=""></div>
         <div class="pic2"><img src="m.png" alt=""></div>-->
     </section>

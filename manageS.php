@@ -6,7 +6,7 @@
 $host="localhost";   $duus="root";
 $dbp="";     $dbname="webs";
 
-$query="SELECT service,date,time,note FROM setappointment";
+$query="SELECT  AppointmentID, service,date,time,note FROM setappointment";
 
 if(!($db2=mysqli_connect($host,$duus,$dbp,$dbname)))
 die("<p>the connection error</p>");
@@ -15,8 +15,12 @@ if(!($result=mysqli_query($db2,$query)))
 die("<p>the qurey error</p>");
 
 
-$pizzas=mysqli_fetch_all($result,MYSQLI_ASSOC);
+$row=mysqli_fetch_all($result,MYSQLI_ASSOC);
 mysqli_free_result($result);
+
+
+//$id = mysqli_real_escape_string($db2, $_POST['id']);
+
 mysqli_close($db2);
 //print_r($pizzas);
 
@@ -79,11 +83,7 @@ mysqli_close($db2);
 
                    <li><a href="AboutusM.html">About Us</a></li> 
                     <li class="move-right-btn" ><a href="main.html"id="profile"><i class="fas fa-sign-out" ></i></a>
-                       <!--  <ul class="sub-menu" id="sub-menu-arrow2"> 
-                            <li ><a href="#">View Profile</a></li>
-                            <li><a href="./LnadingPage.html">Sign Out</a></li>
-                    
-                          </ul>-->
+                      
                         </li>
                   </ul>
                 
@@ -102,29 +102,29 @@ mysqli_close($db2);
         <h1 class="head">Manage Appointment</h1>
       </div>
 
+     
 
-    
+   
  <div class="row">
  <div class="column">
            
 
-            <?php foreach($pizzas as $pizza){  ?>
+            <?php foreach($row as $appoi){  ?>
                 <div class="card">
-                    <p><?php echo"service:" .$pizza['service'];   ?></p>
-                    <p><?php echo"Date:" .$pizza['date'];   ?></p>
-                    <p><?php echo"time:" .$pizza['time'];   ?></p>
-                    <p><?php echo"note:" .$pizza['note'];   ?></p>
+                    <p><?php echo"service:" .$appoi['service'];   ?></p>
+                    <p><?php echo"Date:" .$appoi['date'];   ?></p>
+                    <p><?php echo"time:" .$appoi['time'];   ?></p>
+                    <p><?php echo"note:" .$appoi['note'];   ?></p>
                     <div class="icons">
-        <a href="editMaxApp1.html" class="rvw">edit <i class="fas fa-pen"></i></a>
-        <a href="#" class="rvw">delete <i class="fas fa-pen"></i></a></div>
-        
+        <a href="editMaxApp1.php?id=<?php echo $appoi['AppointmentID']; ?>">Edit <i class="fas fa-pen"></i></a>
+        <a href="deleteApp.php?id=<?php echo $appoi['AppointmentID']; ?>" >delete <i class="fas fa-pen"></i></a></div>
+ 
 </div>
 <?php }?>
 </div>
 </div>
 
-
-
+            
 
 
 
@@ -259,7 +259,7 @@ mysqli_close($db2);
 
 
 -->
-<!--
+<!--i need it
 <div class="column">
   <div class="card"> 
    <div class="img-container"> 	<img src="pluus.png" />

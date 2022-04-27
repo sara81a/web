@@ -1,7 +1,5 @@
 
 <?php 
-
-
 //$db=mysql_connect("localhost","root","","webs");
 $host="localhost";   $duus="root";
 $dbp="";     $dbname="webs";
@@ -93,7 +91,7 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
 <div class="container">
 <h1 class="BookHead"> Set available appointment! </h1>
 
-<form class="input" method="post"  >
+<form class="input" method="POST"  >
 
 
 	
