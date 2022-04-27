@@ -107,7 +107,7 @@ mysqli_close($db2);
    
  <div class="row">
  <div class="column">
-           
+           <ul class="phpnow"> 
 
             <?php foreach($row as $appoi){  ?>
                 <div class="card">
@@ -118,7 +118,7 @@ mysqli_close($db2);
                     <div class="icons">
         <a href="editMaxApp1.php?id=<?php echo $appoi['AppointmentID']; ?>">Edit <i class="fas fa-pen"></i></a>
         <a href="deleteApp.php?id=<?php echo $appoi['AppointmentID']; ?>" >delete <i class="fas fa-pen"></i></a></div>
- 
+        </ul>
 </div>
 <?php }?>
 </div>
