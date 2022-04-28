@@ -104,11 +104,10 @@ mysqli_close($db2);
 
      
 
-   
+      <ul style="margin-bottom:20px;" > 
  <div class="row">
  <div class="column">
-           <ul class="phpnow"> 
-
+          
             <?php foreach($row as $appoi){  ?>
                 <div class="card">
                     <p><?php echo"service:" .$appoi['service'];   ?></p>

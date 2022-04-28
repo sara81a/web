@@ -13,10 +13,26 @@ $id=$_GET['id'];
 
 $query="SELECT * FROM  setappointment  where AppointmentID= '$id' ";
 
+
+
 if(!($result=mysqli_query($db2,$query)))
 die("<p>the qurey error</p>");
 
+
 $row=mysqli_fetch_array($result);
+
+
+///
+
+$query2="SELECT  Nservice FROM servicemanager";
+
+if(!($result2=mysqli_query($db2,$query2)))
+die("<p>the qurey error</p>");
+
+
+$row2=mysqli_fetch_all($result2,MYSQLI_ASSOC);
+mysqli_free_result($result2);
+///
 //mysqli_free_result($result);
 mysqli_close($db2);
 //print_r($pizzas);
@@ -95,10 +111,10 @@ mysqli_close($db2);
                 </div>-->
                 <div class="row py-2">
                     <div class="col-md-6"> <label for="service">service</label> <select id="service" class="bg-light"   value="<?php echo $row['service']; ?>"name="service" required>
-                            <option value="DENTAL CARE" >DENTAL CARE</option>
-                            <option value="HAIR CUT"selected>HAIR CUT</option>
-                            <option value="Grooming"selected>Grooming</option>
-                        
+                    <option><?php echo $row['service'];   ?>  </option> 
+                    <?php foreach($row2 as $appoi){  ?>
+				<option><?php echo $appoi['Nservice'];   ?>  </option>
+				<?php }?>  
                     </div>
                         </select> </div>
                      <!--   <div class="row py-2">

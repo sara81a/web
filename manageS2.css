@@ -9,12 +9,7 @@
 
     background-color: #ececea;
   }
-  .phpnow ul{
-      margin-top: 40px;
-      margin-left: auto;
-      margin-right:20px;
-      padding: -30px;
-  }
+ 
   .head{
       border-radius: 100px;
       width: auto;   
@@ -45,7 +40,6 @@ display:inline;
     border-radius: 0.6em;
     color: #531c03;
     text-align: center;   
-   
     cursor: pointer;
     transition: 0.3s;
     background-color: #ffffff;

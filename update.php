@@ -1,3 +1,6 @@
+
+
+
 <?php
 	$host="localhost";   $duus="root";
     $dbp="";     $dbname="webs";
@@ -17,9 +20,11 @@
 	$note=$_POST['note'];
 
 
+   
+   if( mysqli_query($db2,"UPDATE setappointment set service='$service', date='$date' , time='$time',note='$note' where  AppointmentID='$id'"));
+	echo '<script>alert("Appointment is Updated succsefully")</script>';
 
-    mysqli_query($db2,"UPDATE setappointment set service='$service', date='$date' , time='$time',note='$note' where  AppointmentID='$id'");
-	header('location:manageS.php');
+ header('location:manageS.php');
   
     mysqli_close($db2);
 ?>

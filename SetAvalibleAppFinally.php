@@ -4,7 +4,27 @@
 $host="localhost";   $duus="root";
 $dbp="";     $dbname="webs";
 
-$db=mysqli_connect($host,$duus,$dbp,$dbname);
+
+$query="SELECT  Nservice FROM servicemanager";
+
+
+
+if(!($db=mysqli_connect($host,$duus,$dbp,$dbname)))
+die("<p>the connection error</p>");
+
+if(!($result=mysqli_query($db,$query)))
+die("<p>the qurey error</p>");
+
+
+$row=mysqli_fetch_all($result,MYSQLI_ASSOC);
+mysqli_free_result($result);
+
+
+//$id = mysqli_real_escape_string($db2, $_POST['id']);
+
+mysqli_close($db);
+
+
 
 ?>
 <!DOCTYPE html>
@@ -50,14 +70,7 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
             <nav class="navbar">
                 <ul class="nav-list">
                     <li  ><a href="home-manager.html">Home</a>
-                       <!-- <ul class="sub-menu" id="sub-menu-arrow"> 
-                          <li > <a href="./MahaB Add A Service Page.html">Add a New Service</a></li>
-                          <li><a href="./availabel apointment manager.html">Set a New Appointment</a></li>
-                          <li><a href="./request list manager.html">View Requests List</a></li>
-          
-                          <li><a href="./upcoming and previous manager.html">View Appointments List</a> </li>
-                  
-                        </ul>-->
+                      
                       </li>
                       
                       
@@ -65,11 +78,7 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
 
                    <li><a href="AboutusM.html">About Us</a></li> 
                     <li class="move-right-btn" ><a href="main.html"id="profile"><i class="fas fa-sign-out" ></i></a>
-                       <!--  <ul class="sub-menu" id="sub-menu-arrow2"> 
-                            <li ><a href="#">View Profile</a></li>
-                            <li><a href="./LnadingPage.html">Sign Out</a></li>
-                    
-                          </ul>-->
+                     
                         </li>
                   </ul>
                 
@@ -98,10 +107,13 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
 		<div class="selectPet">
 		<strong>Select your service :</strong>
 		<select id="selection" name="service">
-			<option value="" data-subtitle="--" data-left="MaxPic.jpeg" selected>--Select your service--</option>
+			 <!--<option value="" data-subtitle="--" data-left="MaxPic.jpeg" selected>--Select your service--</option>
 			<option value="checkup" data-subtitle="checkup" data-left="MaxPic.jpeg" >checkup</option>
 			<option value="Grooming" data-subtitle="Grooming" data-left=".jpeg" >Grooming</option>
-			<option value="boarding" data-subtitle="boarding" data-left=".jpeg" >Boarding</option>
+			<option value="boarding" data-subtitle="boarding" data-left=".jpeg" >Boarding</option>-->
+			<?php foreach($row as $appoi){  ?>
+				<option><?php echo $appoi['Nservice'];   ?>  </option>
+				<?php }?>
 		</select>
 	</div>
 
@@ -210,5 +222,5 @@ if(mysqli_query($db,$qry)){
 }
 
 }
-mysqli_close($db);
+
 ?>
