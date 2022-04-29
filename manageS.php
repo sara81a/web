@@ -104,9 +104,9 @@ mysqli_close($db2);
 
      
 
-      <ul style="margin-bottom:20px;" > 
- <div class="row">
- <div class="column">
+      <ul style="margin-bottom:20px; display:inline;" > 
+ <div style="display:inline;" class="row">
+ <div style="display:inline;" class="column">
           
             <?php foreach($row as $appoi){  ?>
                 <div class="card">

@@ -22,7 +22,7 @@ mysqli_free_result($result);
 
 //$id = mysqli_real_escape_string($db2, $_POST['id']);
 
-mysqli_close($db);
+
 
 
 
@@ -211,16 +211,21 @@ $datee=$_POST['date'];
 $time=$_POST['time'];
 $notes=$_POST['note'];
 
-
 $qry="INSERT  Into setappointment values(null,'$service' ,'$datee', '$time' ,'$notes')";
 
 if(mysqli_query($db,$qry)){
-    echo  '<script>alert("added sucsses");</script>';
-//header('location:SetAvalibleAppFinally.php ');
-}else{
-    echo mysqli_error($db);
-}
+    echo  '<script>alert("added sucsses"); </script>';}
+//header('location:SetAvalibleAppFinally.php ');}
+
+else{
+    echo mysqli_error($db);}
+
+
 
 }
+
+
+
+
 
 ?>
