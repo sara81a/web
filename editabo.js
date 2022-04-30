@@ -7,7 +7,7 @@ var imagei=document.getElementById("phAbo");
      }
  }
 
- ///////////////////////////
+ /////////////////////////// 
  var imagei2=document.getElementById("phAbo2");
  var pi2 =document.getElementById("addi2");
  imagei2.onchange=evi =>{
