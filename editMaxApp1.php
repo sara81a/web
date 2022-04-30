@@ -28,14 +28,7 @@ $query2="SELECT  Nservice FROM servicemanager";
 
 if(!($result2=mysqli_query($db2,$query2)))
 die("<p>the qurey error</p>");
-//
-$query2="SELECT  Nservice FROM servicemanager";
 
-if(!($result2=mysqli_query($db2,$query2)))
-die("<p>the qurey error</p>");
-
-
-//
 
 
 $row2=mysqli_fetch_all($result2,MYSQLI_ASSOC);
