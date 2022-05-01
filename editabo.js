@@ -83,7 +83,7 @@ let cance2;
  scratch2.addEventListener("keyup",event2 =>{
      if(cance2)clearTimeout(cance2)
   cance2= setTimeout( ()=> {
-    localStorage.setItem("notes2",event2.target.value);
+ var x=   localStorage.setItem("notes2",event2.target.value);
      },1000);
 
  });
