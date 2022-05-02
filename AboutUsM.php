@@ -33,9 +33,9 @@ mysqli_free_result($result);
         
     <meta charset="UTF-8">
 <title>4-interface</title>
-<link rel="stylesheet" href="manageS2.css" />
-<link href="About1.css" rel="stylesheet"/> 
-<link href="About2.css" rel="stylesheet"/> 
+<link rel="stylesheet" href="sara.css" />
+
+
     <link href="About3.css" rel="stylesheet"/> 
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"rel="stylesheet"/> 
@@ -74,14 +74,7 @@ mysqli_free_result($result);
             <nav class="navbar">
                 <ul class="nav-list">
                     <li  ><a href="home-manager.html">Home</a>
-                       <!-- <ul class="sub-menu" id="sub-menu-arrow"> 
-                          <li > <a href="./MahaB Add A Service Page.html">Add a New Service</a></li>
-                          <li><a href="./availabel apointment manager.html">Set a New Appointment</a></li>
-                          <li><a href="./request list manager.html">View Requests List</a></li>
-          
-                          <li><a href="./upcoming and previous manager.html">View Appointments List</a> </li>
-                  
-                        </ul>-->
+                      
                       </li>
                       
                       
@@ -89,11 +82,7 @@ mysqli_free_result($result);
 
                    <li><a href="AboutusM.html">About Us</a></li> 
                     <li class="move-right-btn" ><a href="main.html"id="profile"><i class="fas fa-sign-out" ></i></a>
-                       <!--  <ul class="sub-menu" id="sub-menu-arrow2"> 
-                            <li ><a href="#">View Profile</a></li>
-                            <li><a href="./LnadingPage.html">Sign Out</a></li>
-                    
-                          </ul>-->
+                      
                         </li>
                   </ul>
                 
@@ -111,7 +100,7 @@ mysqli_free_result($result);
 
        <p class="floa">
        <?php foreach($row as $appoi){  ?>
-       <img   width="600" height="300"  src="data:image/jpeg;base64,<?php echo base64_encode($appoi['phptol']); ?>"  >  
+       <img style="margin-left:20%;"   width="600" height="300"  src="data:image/jpeg;base64,<?php echo base64_encode($appoi['phptol']); ?>"  >  
     <?php }?>
 
     
@@ -160,15 +149,7 @@ mysqli_free_result($result);
 <?php }?>
 </div>
 </div>
-   <!--
-<div class="textara3">
-<p>veterinary clinic means a facility for the medical care and treatment of pets,
-enable owner to manage pet requests appointment ,add pet,seervice,veterinary clinic means a facility for the medical care and treatment of pets,
-enable owner to manage pet requests appointment ,add pet,seervice</p>
-<a class="pen" href="#"><li><a href="editAbout.html" ><i class="fas fa-pencil"></i> </a></li>
-</div>
-
-<br><br><br>-->
+   
 
  <div class="beforsericle-aboutloaction"> 
     <p>Our Location</p></div>

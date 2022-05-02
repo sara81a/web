@@ -11,13 +11,18 @@ if(!isset($_GET['id'] )){
    $id=$_GET['id'];
    if(isset($_POST['submit'])){
     if(isset($_FILES['fileim'])){
-        $phptol=$_FILES['fileim']['tmp_name'];}
-    $phptol=addslashes(file_get_contents($phptol));
+        $phptol=$_FILES['fileim']['tmp_name'];
+    $phptol=addslashes(file_get_contents($phptol));}
     $about=$_POST['about'];
 	$vision=$_POST['vision'];
     $location=$_POST['location'];
 	//$photoa=$_POST['photoa'];
    
+
+
+
+
+
     }
     else{
         echo "error";

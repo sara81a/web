@@ -106,9 +106,10 @@ mysqli_close($db2);
                 
            
                
- <img    width="200" height="100"  src="data:image/jpeg;base64,<?php echo base64_encode($row['phptol']); ?>"  >  
+ <img id="addi"   width="200" height="100"  src="data:image/jpeg;base64,<?php echo base64_encode($row['phptol']); ?>"  >  
        <input type="file" id="phAbo"  name="fileim" /> 
        <br><br>
+
                
                                <div class="py-2">
                            <div class="row py-2">
@@ -172,6 +173,6 @@ mysqli_close($db2);
         </div>
         <h1 class="credit">&copy; copyright @ 2022 by software Engineers</h1>
     </div>
-    
+    <script src="editabo.js"> </script>
     </body>
 </html>

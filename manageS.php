@@ -49,7 +49,7 @@ mysqli_close($db2);
       rel="stylesheet"
     />
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="manageS2.css" />
+    <link rel="stylesheet" href="sara.css" />
     <link rel="stylesheet" href="Header and Footer.css" />
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
   </head>
