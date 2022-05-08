@@ -107,9 +107,9 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
 	<!-- <label class="filebutton">-->
 		
 		<strong><p>add photo:</p></strong>
-
+		<img  id="addimg"   width="200" height="100"/>
 		<input type="file" id="myFile" accept="img/png,img/jpg" name="photo" >
-		<img  id="addimg" />
+	
 		
 		<!--  </label>-->
 
