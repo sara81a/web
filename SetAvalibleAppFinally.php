@@ -128,7 +128,7 @@ mysqli_free_result($result);
 	<br><br>
 	<div class="DateTime">
 		<label for="date&time" ><strong>Enter the Time :</strong> </label>
-		<input type="time" id="Time" name="time" required>
+		<input type="time" id="Time" name="time" >
 		</div>
 	
     
@@ -144,7 +144,7 @@ mysqli_free_result($result);
     
 	
 	<div class="end" >
-	<input id="submit" name="submit" value="submit" type="submit" class="toogle" >
+	<input id="submit" name="submit" value="Add" type="submit" class="toogle" >
 	<input id="reset" value="reset" type="reset" >
     </div>  	
 
@@ -199,7 +199,7 @@ mysqli_free_result($result);
 
 
 
-<script src="sc2.js"> </script>
+<script src="sc1.js"> </script>
 
 </body>
 </html>

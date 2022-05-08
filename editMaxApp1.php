@@ -96,11 +96,11 @@ mysqli_close($db2);
                 </div>
                 <br><br>-->
                 <br>
-            <form  class="inputA" method="POST" action="update.php?id=<?php echo $id; ?>" >
+            <form  class="inputA" method="POST"  name="testForm4" onsubmit="return(validationFunc4())" action="update.php?id=<?php echo $id; ?>" >
                 
             <div class="py-2">
             <div class="row py-2">
-                    <div class="col-md-6 pt-md-0 pt-3"> <label for="Date"> Date</label> <input type="date" class="bg-light form-control"  value="<?php echo $row['date']; ?>"name="date"  required> </div>
+                    <div class="col-md-6 pt-md-0 pt-3"> <label for="Date"> Date</label> <input type="date" class="bg-light form-control"  value="<?php echo $row['date']; ?>"name="date"  > </div>
                
                 </div></div>
                
@@ -111,7 +111,7 @@ mysqli_close($db2);
 
                 </div>-->
                 <div class="row py-2">
-                    <div class="col-md-6"> <label for="service">service</label> <select id="service" class="bg-light"   value="<?php echo $row['service']; ?>"name="service" required>
+                    <div class="col-md-6"> <label for="service">service</label> <select id="service" class="bg-light"   value="<?php echo $row['service']; ?>"name="service" >
                     <option><?php echo $row['service'];   ?>  </option> 
                     <?php foreach($row2 as $appoi){  ?>
 				<option><?php echo $appoi['Nservice'];   ?>  </option>
@@ -129,12 +129,12 @@ mysqli_close($db2);
                                 <br>
                                 <div class="py-2">
                            <div class="row py-2">
-                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> Time</label> <input type="time" class="bg-light form-control" value="<?php echo $row['time']; ?>"name="time" required> </div>
+                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> Time</label> <input type="time" class="bg-light form-control" value="<?php echo $row['time']; ?>"name="time" > </div>
                                </div></div>
                <br>
                                <div class="py-2">
                            <div class="row py-2">
-                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> Note</label> <input type="text" class="bg-light form-control"   value="<?php echo $row['note']; ?>"name="note" required> </div>
+                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> Note</label> <input type="text" class="bg-light form-control"   value="<?php echo $row['note']; ?>"name="note" > </div>
                                </div></div>
                         
 
@@ -145,7 +145,7 @@ mysqli_close($db2);
 <br><br>
                 <div class="py-3 pb-4 border-bottom" > 
                 <!--  <button class="btn btn-primary mr-3" >Save</button> -->
-                    <input type="submit" name="submit"  class="btn border button">
+                    <input type="submit" name="submit"  class="btn border button"  value="Edit">
                 <!--<button class="btn border button">Cancel</button> </div>-->
                
             </div>
@@ -190,5 +190,7 @@ mysqli_close($db2);
         <h1 class="credit">&copy; copyright @ 2022 by software Engineers</h1>
     </div>
     
+
+    <script src="sc2.js"> </script>
     </body>
 </html>

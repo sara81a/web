@@ -102,7 +102,7 @@ mysqli_close($db2);
                 </div>
                 <br><br>-->
                 <br>
-            <form  class="inputA" enctype='multipart/form-data' method="POST" action="updateubout.php?id=<?php echo $id; ?>" >
+            <form  class="inputA" enctype='multipart/form-data' method="POST" name="testForm3" onsubmit="return(validationFunc3())"  action="updateubout.php?id=<?php echo $id; ?>" >
                 
            
                

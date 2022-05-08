@@ -1,22 +1,26 @@
-var theForm2 = document.testForm2;
+///////////////editMax:
+var theForm4 = document.testForm4;
 
-// Form validation code
-function validationFunc2() {
-if (theForm2.service.value == "") {
-    alert( "choose the service please" );
-    theForm2.service.focus();
+function validationFunc4() {
+    if (theForm4.date.value == "") {
+        alert( "Enter date  please" );
+        theForm4.date.focus();
+        return false;
+    }
+    if (theForm4.service.value == "") {
+        alert( "choose service  please" );
+        theForm4.service.focus();
+        return false;
+    }
+    if (theForm4.time.value == "") {
+        alert( "Enter time  please" );
+        theForm4.time.focus();
+        return false;
+    }
+if (theForm4.note.value == ""||theForm4.note.value.length < 10) {
+    alert( "Enter note  more than 10 charcter please" );
+    theForm4.note.focus();
     return false;
 }
-if (theForm2.date.value == "") {
-    alert( "Enter the price please" );
-    theForm2.date.focus();
-    return false;
-}
 
-
-return (true);
-}
-
-
-
-
+return (true);}

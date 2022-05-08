@@ -6,21 +6,23 @@
 $host="localhost";   $duus="root";
 $dbp="";     $dbname="webs";
 
-$query="SELECT  AppointmentID, service,date,time,note FROM setappointment";
+$query="SELECT serviceID, photo,  AppointmentID, service,date,time,note FROM setappointment ,servicemanager WHERE serviceID=AppointmentID";
+
+//$query2="SELECT serviceID, photo FROM servicemanager";
 
 if(!($db2=mysqli_connect($host,$duus,$dbp,$dbname)))
 die("<p>the connection error</p>");
 
 if(!($result=mysqli_query($db2,$query)))
 die("<p>the qurey error</p>");
-
-
 $row=mysqli_fetch_all($result,MYSQLI_ASSOC);
 mysqli_free_result($result);
 
 
 //$id = mysqli_real_escape_string($db2, $_POST['id']);
-
+//if(!($result2=mysqli_query($db2,$query2)))
+//die("<p>the qurey error</p>");
+//$row2=mysqli_fetch_all($result2,MYSQLI_ASSOC);
 mysqli_close($db2);
 //print_r($pizzas);
 
@@ -109,7 +111,11 @@ mysqli_close($db2);
  <div style="display:inline;" class="column">
           
             <?php foreach($row as $appoi){  ?>
+           
                 <div class="card">
+                <div class="img-container">
+                <img style="padding-top:20%; padding-bottom:90%;  "    height="190"   src="data:image/jpeg;base64,<?php echo base64_encode($appoi['photo']); ?>"  >  
+              </div>
                     <p><?php echo"service:" .$appoi['service'];   ?></p>
                     <p><?php echo"Date:" .$appoi['date'];   ?></p>
                     <p><?php echo"time:" .$appoi['time'];   ?></p>
@@ -119,6 +125,7 @@ mysqli_close($db2);
         <a href="deleteApp.php?id=<?php echo $appoi['AppointmentID']; ?>" >delete <i class="fas fa-pen"></i></a></div>
         </ul>
 </div>
+
 <?php }?>
 </div>
 </div>
