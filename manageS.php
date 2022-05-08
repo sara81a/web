@@ -6,7 +6,9 @@
 $host="localhost";   $duus="root";
 $dbp="";     $dbname="webs";
 
-$query="SELECT serviceID, photo,  AppointmentID, service,date,time,note FROM setappointment ,servicemanager WHERE serviceID=AppointmentID";
+$query="SELECT   AppointmentID, service,date,time,note FROM setappointment ";
+/*$query="SELECT serviceID, photo,  AppointmentID, service,date,time,note FROM setappointment ,servicemanager WHERE serviceID=AppointmentID";*/
+
 
 //$query2="SELECT serviceID, photo FROM servicemanager";
 
@@ -113,9 +115,9 @@ mysqli_close($db2);
             <?php foreach($row as $appoi){  ?>
            
                 <div class="card">
-                <div class="img-container">
-                <img style="padding-top:20%; padding-bottom:90%;  "    height="190"   src="data:image/jpeg;base64,<?php echo base64_encode($appoi['photo']); ?>"  >  
-              </div>
+             <!--   <div class="img-container">
+                <img style="padding-top:20%; padding-bottom:90%;  "    height="190"   src="data:image/jpeg;base64,php echo base64_encode($appoi['photo']); ?>"  >  
+              </div>-->
                     <p><?php echo"service:" .$appoi['service'];   ?></p>
                     <p><?php echo"Date:" .$appoi['date'];   ?></p>
                     <p><?php echo"time:" .$appoi['time'];   ?></p>

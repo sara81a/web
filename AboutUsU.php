@@ -6,7 +6,7 @@
 $host="localhost";   $duus="root";
 $dbp="";     $dbname="webs";
 
-$query="SELECT  aboutid, phptol,about, vision,location,photoa  FROM aboutus";
+$query="SELECT  aboutid, phptol,about, vision,location FROM aboutus";
 
 if(!($db2=mysqli_connect($host,$duus,$dbp,$dbname)))
 die("<p>the connection error</p>");

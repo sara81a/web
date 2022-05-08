@@ -17,7 +17,7 @@ if(!isset($_GET['id'] )){
 }
 $id=$_GET['id'];
 
-$query="SELECT  about, vision,location,photoa ,phptol FROM aboutus";  ;
+$query="SELECT  about, vision,location,phptol FROM aboutus";  ;
 
 
 
