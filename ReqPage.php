@@ -73,13 +73,13 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
 <div class="container">
 <h1 class="BookHead"> Add service! </h1>
 
-<form class="input" method="POST"  >
+<form class="input" method="POST" id="form"  name="testForm" onsubmit="return(validationFunc())" >
 
 
 	
 		<div class="selectService">
 		<strong>Enter the service :</strong>
-		<input type="text"  name="Nservice" size="50" maxlength="30">
+		<input type="text"  name="Nservice" size="50" maxlength="30" id="addservice">
 	</div>
 
 	<br><br>
@@ -117,7 +117,7 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
     
 	
 	<div class="end" >
-	<input id="submit" value="submit" type="submit" class="toogle"  name="submit" >
+	<input id="submit" value="Add" type="submit" class="toogle"  name="submit"  >
 	<input id="reset" value="reset" type="reset" >
     </div>  	
 

@@ -100,7 +100,7 @@ mysqli_free_result($result);
 <div class="container">
 <h1 class="BookHead"> Set available appointment! </h1>
 
-<form class="input" method="POST"  >
+<form class="input" method="POST"  name="testForm2" onsubmit="return(validationFunc2())"  >
 
 
 	
@@ -123,7 +123,7 @@ mysqli_free_result($result);
 
 <div class="DateTime">
 	<label for="date&time" ><strong>Enter the Date :</strong> </label>
-	<input type="date" id="dateTime" name="date" required>
+	<input type="date" id="dateTime" name="date" >
     </div>
 	<br><br>
 	<div class="DateTime">
@@ -199,7 +199,7 @@ mysqli_free_result($result);
 
 
 
-
+<script src="sc2.js"> </script>
 
 </body>
 </html>
