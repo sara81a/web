@@ -1,13 +1,9 @@
 <?php
-
-
 $host="localhost";   $duus="root";
 $dbp="";     $dbname="webs";
 $db=mysqli_connect($host,$duus,$dbp,$dbname);
-
 $flag=false;
 $id=$_GET['id'];
-
 
 $Query="SELECT service_rate, recommend,Appid,feedback from feedback";
 $run=$db -> query($Query);
@@ -24,9 +20,6 @@ if(!empty($run->num_rows) && ($run->num_rows>0)){
       
         $recommend=$row['recommend'];
         $feedback=$row['feedback'];
-      
-    
-        
         $flag=true;
      break;
     }
@@ -97,13 +90,9 @@ if(!empty($run->num_rows) && ($run->num_rows>0)){
     <div class="container">
         
 <?php if(!$flag){  //if there is no appid , insert:
-
-
-       echo'  <form method="POST" class="inputA"  >';
-            
+       echo'  <form method="POST" class="inputA"  >';   
        echo' <p class="imp">Help Us Improve!</p>';
        echo' <br>';
-
        echo' <p class="rt">Rate our service</p>';
        echo' <div class="rate">';
        echo'  <input type="radio" id="star5" name="rate2" value="5" />';
@@ -118,86 +107,46 @@ if(!empty($run->num_rows) && ($run->num_rows>0)){
        echo'   <label for="star1" title="text">1 star</label>';
        echo' </div>';
        echo' <br><br>';
-      
-     /*  echo'<p>Would you recommend us to a friend?</p>';
-     
-    <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-  <label class="form-check-label" for="flexRadioDefault1">
-    Yes
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-  <label class="form-check-label" for="flexRadioDefault2">
-    No
-  </label>
-</div>*/
 echo'<input type="submit" id="submit" name="submit" class="submit" value ="addd">';
 echo' <p> any improvements?:</p> ';
 echo' <div id="ta">';
 echo' <textarea name="recommend2" form="usrform" rows="5" cols="35" style="border: solid 1px grey;"></textarea>';
 echo' <br>';
-
-
 echo' <p> Write a review:</p>';
-
 echo' <textarea name="feedb2" form="usrform" rows="5" cols="35" style="border: solid 1px grey;"></textarea>';
-echo'</div>';
-
-
-
-echo'</div>';
-echo'</div>';
+echo'</div>'; echo'</div>'; echo'</div>';
 echo '</form>';
 
 }
 //ther is in table value =appid show
 else{
-
-    echo'  <form action="#" method="POST" class="inputA"  >';
-            
+    echo'  <form action="#" method="POST" class="inputA"  >';      
     echo' <p class="imp">Help Us Improve!</p>';
     echo' <br>';
-
     echo' <p class="rt">Rate our service</p>';
     echo' <div class="rate">';
-
     echo'  <input type="radio" id="star5" name="rate" value="5"  readonly '.$five_checked.'/>';
     echo' <label for="star5" title="text">5 stars</label>';
-
     echo' <input type="radio" id="star4" name="rate" value="4" '.$four_checked.'/>';
     echo' <label for="star4" title="text">4 stars</label>';
-
     echo' <input type="radio" id="star3" name="rate" value="3"'.$three_checked.' />';
     echo'  <label for="star3" title="text">3 stars</label>';
-
     echo' <input type="radio" id="star2" name="rate" value="2"  readonly '.$tow_checked.'/>';
     echo' <label for="star2" title="text">2 stars</label>';
-
     echo' <input type="radio" id="star1" name="rate" value="1"'.$one_checked.' />';
     echo'   <label for="star1" title="text">1 star</label>';
     echo' </div>';
-   
     echo' <br><br>';
-
     echo' <p> any improvements?:</p> ';
 echo' <div id="ta">';
-echo' <textarea name="recommend" form="usrform" rows="5" cols="35" style="border: solid 1px grey;" value="" readonly>'.$recommend.' </textarea>';
-echo' </div><br>';
-
-
+echo' <textarea name="recommend2" form="usrform" rows="5" cols="35" style="border: solid 1px grey;" value="" readonly>'.$recommend.' </textarea>';
+echo' <br>';
 echo' <p> Write a review:</p>';
-echo' <div id="ta">';
-echo' <textarea name="feedb" form="usrform" rows="5" cols="35" style="border: solid 1px grey;" value="" readonly>'.$feedback.'</textarea>';
+
+echo' <textarea name="feedb2" form="usrform" rows="5" cols="35" style="border: solid 1px grey;" value="" readonly>'.$feedback.'</textarea>';
 echo'</div><br>';
 echo'<button name="back" class="submit">back</button>';
-
-
-echo'</div>';
-echo'</div>';
-echo '</form>';
-
+echo'</div>'; echo'</div>'; echo '</form>';
 }?>
 </section>
 
