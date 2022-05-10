@@ -113,17 +113,17 @@ mysqli_close($db2);
                
                                <div class="py-2">
                            <div class="row py-2">
-                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> About:</label> <textarea class="bg-light form-control"  name="about" row="4" required>"<?php echo $row['about']; ?>" </textarea></div>
+                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> About:</label> <textarea class="bg-light form-control"  name="about" row="4" >"<?php echo $row['about']; ?>" </textarea></div>
                                </div></div>
                         <br><br>
                                <div class="py-2">
                            <div class="row py-2">
-                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> vision:</label> <textarea class="bg-light form-control"  name="vision" row="4" required>"<?php echo $row['vision']; ?>" </textarea></div>
+                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> vision:</label> <textarea class="bg-light form-control"  name="vision" row="4" >"<?php echo $row['vision']; ?>" </textarea></div>
                                </div></div>
 <br><br>
                      <div class="py-2">
                            <div class="row py-2">
-                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> location:</label> <textarea class="bg-light form-control"  name="location" row="4" required>"<?php echo $row['location']; ?>" </textarea></div>
+                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> location:</label> <textarea class="bg-light form-control"  name="location" row="4" >"<?php echo $row['location']; ?>" </textarea></div>
                                </div></div>
 
                             

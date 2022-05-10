@@ -199,7 +199,7 @@ mysqli_free_result($result);
 
 
 
-<script src="sc1.js"> </script>
+<script src="sc4.js"> </script>
 
 </body>
 </html>

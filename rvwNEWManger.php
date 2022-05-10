@@ -1,15 +1,23 @@
 <?php
 $host="localhost";   $duus="root";
 $dbp="";     $dbname="webs";
-$db=mysqli_connect($host,$duus,$dbp,$dbname);
-$flag=false;
-$id=$_GET['id'];
 
-$Query="SELECT service_rate, recommend,Appid,feedback from feedback";
+$db=mysqli_connect($host,$duus,$dbp,$dbname);
+
+//$id=$_GET['id'];
+
+
+
+if(!$db){
+die("error in database connection".mysqli_error($db));
+}
+else{ 
+    $id=$_GET['id'];  
+    $Query="SELECT service_rate, recommend,Appid,feedback from feedback WHERE Appid=$id "; 
 $run=$db -> query($Query);
 if(!empty($run->num_rows) && ($run->num_rows>0)){
     while($row=$run -> fetch_assoc()){
-    if($row ['Appid'] ==$id){
+
         $service_rate=$row['service_rate'];
 
         $five_checked=$row['service_rate']=='5' ?'checked' : '';
@@ -20,13 +28,11 @@ if(!empty($run->num_rows) && ($run->num_rows>0)){
       
         $recommend=$row['recommend'];
         $feedback=$row['feedback'];
-        $flag=true;
-     break;
-    }
+   
 
     }
 }
-
+}
 ?> 
 
 <!DOCTYPE html>
@@ -89,40 +95,9 @@ if(!empty($run->num_rows) && ($run->num_rows>0)){
 <div class="out">
     <div class="container">
         
-<?php if(!$flag){  //if there is no appid , insert:
-       echo'  <form method="POST" class="inputA  name="testForm6" onsubmit="return(validationFunc6())"  >';   
-       echo' <p class="imp">Help Us Improve!</p>';
-       echo' <br>';
-       echo' <p class="rt">Rate our service</p>';
-       echo' <div class="rate">';
-       echo'  <input type="radio" id="star5" name="rate2" value="5" />';
-       echo' <label for="star5" title="text">5 stars</label>';
-       echo' <input type="radio" id="star4" name="rate2" value="4" />';
-       echo' <label for="star4" title="text">4 stars</label>';
-       echo' <input type="radio" id="star3" name="rate2" value="3" />';
-       echo'  <label for="star3" title="text">3 stars</label>';
-       echo' <input type="radio" id="star2" name="rate2" value="2" />';
-       echo' <label for="star2" title="text">2 stars</label>';
-       echo' <input type="radio" id="star1" name="rate2" value="1" />';
-       echo'   <label for="star1" title="text">1 star</label>';
-       echo' </div>';
-       echo' <br><br>';
-
-echo' <p> any improvements?:</p> ';
-echo' <div id="ta">';
-echo' <textarea name="recommend2"  rows="1" cols="35" style="border: solid 1px grey;"></textarea>';
-
-echo' <br>';
-echo' <p> Write a review:</p>';   
-echo' <textarea name="feedb2" rows="1" cols="35" style="border: solid 1px grey;"></textarea>';
-echo'<input type="submit" id="submit" name="submit" class="submit" value ="addd" onsubmit="return(validationFunc6())" >';
-echo'</div>'; echo'</div>'; echo'</div>';
-echo '</form>';
-//echo    '<script src="sc3.js"> </script>';
-//row=51
-}
+<?php 
 //therE is in table value =appid show
-else{
+
     echo'  <form action="#" method="POST" class="inputA"  >';      
     echo' <p class="imp">Help Us Improve!</p>';
     echo' <br>';
@@ -130,13 +105,13 @@ else{
     echo' <div class="rate">';
     echo'  <input type="radio" id="star5" name="rate" value="5"  readonly '.$five_checked.'/>';
     echo' <label for="star5" title="text">5 stars</label>';
-    echo' <input type="radio" id="star4" name="rate" value="4" '.$four_checked.'/>';
+    echo' <input type="radio" id="star4" name="rate" value="4"   readonly '.$four_checked.'/>';
     echo' <label for="star4" title="text">4 stars</label>';
-    echo' <input type="radio" id="star3" name="rate" value="3"'.$three_checked.' />';
+    echo' <input type="radio" id="star3" name="rate" value="3"   readonly '.$three_checked.' />';
     echo'  <label for="star3" title="text">3 stars</label>';
     echo' <input type="radio" id="star2" name="rate" value="2"  readonly '.$tow_checked.'/>';
     echo' <label for="star2" title="text">2 stars</label>';
-    echo' <input type="radio" id="star1" name="rate" value="1"'.$one_checked.' />';
+    echo' <input type="radio" id="star1" name="rate" value="1"  readonly'.$one_checked.' />';
     echo'   <label for="star1" title="text">1 star</label>';
     echo' </div>';
     echo' <br><br>';
@@ -150,7 +125,9 @@ echo' <textarea name="feedb" rows="5" cols="35" style="border: solid 1px grey;" 
 echo'</div><br>';
 echo'<button name="back" class="submit"><a href="Previous_Page.php" >Back </a></button>';
 echo'</div>'; echo'</div>'; echo '</form>';
-}?>
+
+
+?>
 </section>
 
 
@@ -197,48 +174,16 @@ echo'</div>'; echo'</div>'; echo '</form>';
             </div>
             <h1 class="credit">&copy; copyright @ 2022 by software Engineers</h1>
         </div>
-        <script src="sc3.js"> </script>
 </body>
+
     </html>
 <?php
 
-if(!$flag){
-if($_SERVER["REQUEST_METHOD"]=="POST"){
-    if (!($database=mysqli_connect("localhost","root","","webs")) )
-    die("<p> not connect to database</p>");
-
-    if(!mysqli_select_db($database,"webs") )
-    die("<p> not open url database</p>");
-   
-    if(isset($_POST['submit'])){
-       $Service_rate=$_POST["rate2"];
- $Recommend=$_POST["recommend2"];
-        
-    $id=$_GET['id'];
-    $Feedback=$_POST["feedb2"];
-
-$query="INSERT Into feedback(service_rate,recommend,Appid,feedback) values('".$Service_rate."','". $Recommend."','".$id."' ,'".$Feedback."');";
-//('".$Service_rate."','". $Recommend."', '".$id."' ,'".$Feedback."');";
-$result=mysqli_query($database,$query);
-if( $result ){
-  // header("location: Previous_Page.php");
-  echo  '<script>alert("Feedback added sucsses"); </script>';
-    ob_end_flush();}
-//query error
-    else{
-        echo"an error occured while inserting into feedback table ";
-    }
-}
-}
-}
 //display form database i have
-else{
 if(isset($_POST['back'] )){
    // header("Previous_Page.php");
     ob_end_flush();
 }
-}
-
 
 mysqli_close($db);
 
