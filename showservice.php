@@ -125,8 +125,8 @@ mysqli_close($db2);
                     <p><?php echo"price:" .$appoi['price'];  ?></p>
                     <p><?php echo"description:" .$appoi['description'];   ?></p>
                     <div class="icons">
-        <a href="editService.php?id=<?php echo $appoi['serviceID ']; ?>">Edit <i class="fas fa-pen"></i></a>
-        <a href="deleteService.php?id=<?php echo $appoi['serviceID ']; ?>" >delete <i class="fas fa-pen"></i></a></div>
+        <a href="editService.php?id=<?php echo $appoi['serviceID']; ?>">Edit <i class="fas fa-pen"></i></a>
+        <a href="deleteService.php?id=<?php echo $appoi['serviceID']; ?>" >delete <i class="fas fa-pen"></i></a></div>
                    
                     
         </ul>

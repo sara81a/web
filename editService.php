@@ -96,42 +96,22 @@ mysqli_close($db2);
                 </div>
                 <br><br>-->
                 <br>
-            <form  class="inputA" method="POST"  name="testForm4" onsubmit="return(validationFunc4())" action="update.php?id=<?php echo $id; ?>" >
+            <form  class="inputA" method="POST"  action="updateService.php?id=<?php echo $id; ?>" >
                 
-            <div class="py-2">
-            <div class="row py-2">
-                    <div class="col-md-6 pt-md-0 pt-3"> <label for="Date"> Date</label> <input type="date" class="bg-light form-control"  value="<?php echo $row['date']; ?>"name="date"  > </div>
-               
-                </div></div>
-               
-<br>
+            
 
                <!-- <div class="row py-2">
                     <div class="col-md-6"> <label for="email">Service</label> <input type="text" class="bg-light form-control" value="Lionhead" placeholder="Pet's breed"required> </div>
 
                 </div>-->
-                <div class="row py-2">
-                    <div class="col-md-6"> <label for="service">service</label> <select id="service" class="bg-light"   value="<?php echo $row['service']; ?>"name="service" >
-                    <option><?php echo $row['service'];   ?>  </option> 
-                    <?php foreach($row2 as $appoi){  ?>
-				<option><?php echo $appoi['Nservice'];   ?>  </option>
-				<?php }?>  
-                    </div>
-                        </select> </div>
-                     <!--   <div class="row py-2">
-                            <div class="col-md-6"> <label for="country">Time</label> <select name="country" id="country" class="bg-light"required>
-                                    <option value="Female" selected>4:30</option>
-                                    <option value="Male">7:15</option>
-                                    <option value="Male">10:00</option>
-                                    <option value="Male">11:40</option>
-                            </div>
-                                </select> </div>-->
-                                <br>
+               
+                    
+                           
                                 <div class="py-2">
                            <div class="row py-2">
                     <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> Name service</label> <input type="text" class="bg-light form-control" value="<?php echo $row['Nservice']; ?>"name="Nservice" > </div>
                                </div></div>
-
+<br>
                                <div class="py-2">
                            <div class="row py-2">
                     <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> price</label> <input type="number" class="bg-light form-control" value="<?php echo $row['price']; ?>"name="price" > </div>
@@ -156,8 +136,9 @@ mysqli_close($db2);
             </div>
         </div>
         </form>
-       <!-- <div class="pic"><img src="IMG_3875-removebg-preview.png" alt=""></div>
-        <div class="pic2"><img src="m.png" alt=""></div>-->
+      
+
+
     </section>
     <div class="footer">
         <div class="box-container">
@@ -196,6 +177,6 @@ mysqli_close($db2);
     </div>
     
 
-    <script src="sc2.js"> </script>
+  <!--  <script src="sc2.js"> </script>-->
     </body>
 </html>
