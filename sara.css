@@ -46,21 +46,24 @@ display:inline;
     background-color: #ffffff;
   }
   .card .img-container {
-    width: 8em;
+    width: 8em; 
     height: 8em;
-    background-color: #CE8F5A;
+    
     padding: 0.5em;
     border-radius: 50%;
     margin: 0 auto 2em auto;
   }
   .card img {
-    width: 100%;
+      position: relative;
+right: 90px;
+
     border-radius: 50%;
   }
   .card h3 {
     font-weight: 500;
   }
   .card p {
+
     font-weight: 300;
     text-transform: uppercase;
     margin: 0.5em 0 2em 0;
@@ -101,7 +104,7 @@ display:inline;
       padding: 5em 1em;
     }
     .column {
-      flex: 0 0 33.33%;
+    
       max-width: 33.33%;
       padding: 0 1em;
     }
