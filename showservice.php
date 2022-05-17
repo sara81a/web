@@ -106,7 +106,9 @@ mysqli_close($db2);
         <h1 class="head">Service information:</h1>
       </div>
 
-     
+      <div  style="width:70%; height:222%; margin-left:15%;" class="card">
+      <a  style="font-size:35px;" href="ReqPage.php" class="rvw">ADD SERVICE <i  style = "font-size:40px;" class="fas fa-plus"></i></a>
+</div>   
 
       <ul style="margin-bottom:20px; display:inline;" > 
  <div style="display:inline; " class="row">
@@ -117,13 +119,13 @@ mysqli_close($db2);
                 <div class="card" style="width:65%; height=10%; margin-left:18%;">
                     
                <div class="img-container"> 
-                <img style="margin-left:2%; padding-bottom:10%;   "  width="270" height="160" alt="could not dawnload" src="data:image/jpeg;base64,<?php echo base64_encode($appoi['photo']); ?>"  >  
+                <img style="margin-left:2%; padding-bottom:10%;"  width="270" height="160" alt="could not dawnload" src="data:image/jpeg;base64,<?php echo base64_encode($appoi['photo']); ?>"  >  
           
             </div>
             <?php  echo '<br> ';   ?>
-                    <p><?php echo"Name of service:" .$appoi['Nservice'];   ?></p>
-                    <p><?php echo"price:" .$appoi['price'];  ?></p>
-                    <p><?php echo"description:" .$appoi['description'];   ?></p>
+                    <p style="font-size:23px;" ><?php echo"Name of service:" .$appoi['Nservice'];   ?></p>
+                    <p style="font-size:23px;"><?php echo"price:" .$appoi['price'];  ?></p>
+                    <p style="font-size:23px;"><?php echo"description:" .$appoi['description'];   ?></p>
                     <div class="icons">
         <a href="editService.php?id=<?php echo $appoi['serviceID']; ?>">Edit <i class="fas fa-pen"></i></a>
         <a href="deleteService.php?id=<?php echo $appoi['serviceID']; ?>" >delete <i class="fas fa-pen"></i></a></div>

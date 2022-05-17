@@ -100,7 +100,7 @@ mysqli_free_result($result);
 <div class="container">
 <h1 class="BookHead"> Set available appointment! </h1>
 
-<form class="input" method="POST"  name="testForm2" onsubmit="return(validationFunc2())"  >
+<form class="input" method="POST"   name="testForm2" onsubmit="return(validationFunc2())"  >
 
 
 	

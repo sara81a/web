@@ -73,7 +73,7 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
 <div class="container">
 <h1 class="BookHead"> Add service! </h1>
 
-<form class="input" method="POST" id="form"  name="testForm" onsubmit="return(validationFunc())" >
+<form class="input" method="POST" id="form"  enctype='multipart/form-data' name="testForm" onsubmit="return(validationFunc())" >
 
 
 	
@@ -108,7 +108,7 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
 		
 		<strong><p>add photo:</p></strong>
 		<img  id="addimg"   width="200" height="100"/>
-		<input type="file" id="myFile" accept="img/png,img/jpg" name="photo" >
+		<input type="file" id="myFile"  name="photo" >
 	
 		
 		<!--  </label>-->
@@ -183,8 +183,8 @@ if(isset($_POST['submit'])){
 $Nservice=$_POST['Nservice'];
 $price=$_POST['price'];
 $description=$_POST['description'];
-$photo=$_POST['photo'];
-
+//$photo=$_POST['photo'];
+$photo=addslashes(file_get_contents($_FILES["photo"]["tmp_name"]));
 
 $qry="INSERT  Into servicemanager values(null,'$Nservice' ,'$price', '$description' ,'$photo')";
 

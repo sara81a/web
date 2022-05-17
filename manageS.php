@@ -101,27 +101,28 @@ mysqli_close($db2);
   <section>
 
     <section class="section_Body">
-      <div class="row">
-          
-        <h1 class="head">Manage Appointment</h1>
+   
+    <div class="row">
+               <h1 class="head">Manage Appointment</h1>
       </div>
-
-     
-
+      <div  style="width:70%; height:222%; margin-left:15%;" class="card">
+      <a  style="font-size:35px;" href="SetAvalibleAppFinally.php" class="rvw">SET AVALUIBLE APPOINTMENT <i  style = "font-size:40px;" class="fas fa-plus"></i></a>
+</div>   
+    <br>  
       <ul style="margin-bottom:20px; display:inline;" > 
- <div style="display:inline;" class="row">
- <div style="display:inline;" class="column">
+ <div style="display:inline;">
+ <div style="display:inline;" >
           
             <?php foreach($row as $appoi){  ?>
            
-                <div class="card">
+                <div class="card" style="width:70%; height:10%; margin-left:15%;">
              <!--   <div class="img-container">
                 <img style="padding-top:20%; padding-bottom:90%;  "    height="190"   src="data:image/jpeg;base64,php echo base64_encode($appoi['photo']); ?>"  >  
               </div>-->
-                    <p><?php echo"service:" .$appoi['service'];   ?></p>
-                    <p><?php echo"Date:" .$appoi['date'];   ?></p>
-                    <p><?php echo"time:" .$appoi['time'];   ?></p>
-                    <p><?php echo"note:" .$appoi['note'];   ?></p>
+                    <p style="font-size:23px;"><?php echo"service:" .$appoi['service'];   ?></p>
+                    <p style="font-size:23px;"><?php echo"Date:" .$appoi['date'];   ?></p>
+                    <p style="font-size:23px;"><?php echo"time:" .$appoi['time'];   ?></p>
+                    <p style="font-size:23px;" ><?php echo"note:" .$appoi['note'];   ?></p>
                     <div class="icons">
         <a href="editMaxApp1.php?id=<?php echo $appoi['AppointmentID']; ?>">Edit <i class="fas fa-pen"></i></a>
         <a href="deleteApp.php?id=<?php echo $appoi['AppointmentID']; ?>" >delete <i class="fas fa-pen"></i></a></div>
@@ -129,6 +130,7 @@ mysqli_close($db2);
 </div>
 
 <?php }?>
+
 </div>
 </div>
 

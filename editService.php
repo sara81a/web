@@ -96,7 +96,7 @@ mysqli_close($db2);
                 </div>
                 <br><br>-->
                 <br>
-            <form  class="inputA" method="POST"  action="updateService.php?id=<?php echo $id; ?>" >
+            <form  class="inputA" method="POST"  enctype='multipart/form-data'  name="testForm4" onsubmit="return(validationFunc4())" action="updateService.php?id=<?php echo $id; ?>" >
                 
             
 
@@ -105,8 +105,9 @@ mysqli_close($db2);
 
                 </div>-->
                
-                    
-                           
+                <img id="addimg"   width="200" height="100"  src="data:image/jpeg;base64,<?php echo base64_encode($row['photo']); ?>"  >  
+       <input type="file" id="myFile"  name="photo" /> 
+      
                                 <div class="py-2">
                            <div class="row py-2">
                     <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> Name service</label> <input type="text" class="bg-light form-control" value="<?php echo $row['Nservice']; ?>"name="Nservice" > </div>
@@ -119,18 +120,19 @@ mysqli_close($db2);
                <br>
                                <div class="py-2">
                            <div class="row py-2">
-                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> description</label> <input type="text" class="bg-light form-control"   value="<?php echo $row['description']; ?>"name="description" > </div>
+                    <div class="col-md-6 pt-md-0 pt-3"> <label for="lastname"> description</label> <input  style="overflow: scroll;  height:222%; " type="text" class="bg-light form-control"   value="<?php echo $row['description']; ?>"name="description" > </div>
                                </div></div>
+                               
                         
-
-
+<br>
+                               <div class="py-3 pb-4 border-bottom" > 
+               
+               <input type="submit" name="submit"  class="btn border button"  value="Edit">
 
                             
                           </div>
-<br><br>
-                <div class="py-3 pb-4 border-bottom" > 
-                <!--  <button class="btn btn-primary mr-3" >Save</button> -->
-                    <input type="submit" name="submit"  class="btn border button"  value="Edit">
+
+               
                 <!--<button class="btn border button">Cancel</button> </div>-->
                
             </div>
@@ -177,6 +179,6 @@ mysqli_close($db2);
     </div>
     
 
-  <!--  <script src="sc2.js"> </script>-->
+ <script src="sc5.js"> </script>
     </body>
 </html>

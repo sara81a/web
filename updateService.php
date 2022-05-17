@@ -10,15 +10,22 @@
     
     } 
     $id=$_GET['id'];
-    
+    if(isset($_POST['submit'])){
     $Nservice=$_POST['Nservice'];
 	$price=$_POST['price'];
     $description=$_POST['description'];
 	//$note=$_POST['note'];
 
-
    
-   if( mysqli_query($db2,"UPDATE  servicemanager set Nservice='$Nservice', price ='$price' , description='$description',photo=null  where  serviceID='$id'"));
+        if(isset($_FILES['photo'])){
+            if(isset($_FILES['photo']['tmp_name']  )){
+            $phptol2=$_FILES['photo']['tmp_name'];
+        $phptol2=addslashes(file_get_contents($phptol2));  }}
+
+            }
+    
+   
+   if( mysqli_query($db2,"UPDATE  servicemanager set Nservice='$Nservice', price ='$price' , description='$description',photo='$phptol2'  where  serviceID='$id'"));
 	echo '<script>alert("Service is Updated succsefully")</script>';
 
  header('location:showservice.php');
