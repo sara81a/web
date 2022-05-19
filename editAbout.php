@@ -58,6 +58,8 @@ mysqli_close($db2);
 
        <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
    
+       <link rel="stylesheet" href="profile_style.css">
+
     </head>
     <body>
            <header>
@@ -89,7 +91,9 @@ mysqli_close($db2);
     
     </header>
     <section>
-       
+    <div class="icons2" >  
+            <a href="AboutUsM.php"> <img src="back-removebg-preview.png" ></a>
+       </div>
       
         <div class="wrapper bg-white mt-sm-5">
             <h4 class="pb-4 border-bottom" style="font-size: 40px; color: #ADD8E6; text-align: center; ">Edit About us:</h4>
@@ -107,7 +111,7 @@ mysqli_close($db2);
            
                
  <img id="addi"   width="200" height="100"  src="data:image/jpeg;base64,<?php echo base64_encode($row['phptol']); ?>"  >  
-       <input type="file" id="phAbo"  name="fileim" /> 
+       <input type="file" id="phAbo"  name="fileim" accept="image/*" /> 
        <br><br>
 
                
@@ -130,7 +134,7 @@ mysqli_close($db2);
                         
 
                 <div class="py-3 pb-4 border-bottom" > 
-                    <input type="submit" name="submit"  class="btn border button">
+                    <input type="submit" name="submit"  class="btn border button" value="save">
             </div>
         
         </div>

@@ -50,7 +50,7 @@ mysqli_free_result($result);
    
 
     
-    
+    <link rel="stylesheet" href="profile_style.css">
   
 
     <!-- font awesome cdn link  -->
@@ -95,7 +95,9 @@ mysqli_free_result($result);
         
       
        <section>
-
+       <div class="icons2" >  
+            <a href="#"> <img src="back-removebg-preview.png" ></a>
+       </div>
 
 
        <p class="floa">

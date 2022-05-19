@@ -22,6 +22,11 @@ if (theForm4.note.value == ""||theForm4.note.value.length < 10) {
     theForm4.note.focus();
     return false;
 }
+if (!isNaN(theForm4.note.value)   ){
+    alert( " All Number Not allowed" );
+    theForm4.note.focus();
+    return false;
+} 
 
 return (true);}
 

@@ -14,11 +14,11 @@ var theForm4 = document.testForm4;
 function validationFunc4() {
     
 
-if (theForm4.photo.value == "") {
+/*if (theForm4.photo.value == "") {
     alert( "choose photo  please" );
     theForm4.photo.focus();
     return false;
-}
+}*/
 
 
 if (theForm4.Nservice.value == "") {
@@ -26,6 +26,11 @@ if (theForm4.Nservice.value == "") {
     theForm4.Nservice.focus();
     return false;
 }
+if (!isNaN(theForm4.Nservice.value)   ){
+    alert( " All Number Not allowed" );
+    theForm4.Nservice.focus();
+    return false;
+} 
 
 if (theForm4.price.value == "") {
     alert( "Enter price   please" );
@@ -38,5 +43,11 @@ if (theForm4.description.value == "") {
     theForm4.description.focus();
     return false;
 }
+
+if (!isNaN(theForm4.description.value)   ){
+    alert( " All Number Not allowed" );
+    theForm4.description.focus();
+    return false;
+} 
 return (true);}
 

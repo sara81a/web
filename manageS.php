@@ -56,6 +56,9 @@ mysqli_close($db2);
     <link rel="stylesheet" href="sara.css" />
     <link rel="stylesheet" href="Header and Footer.css" />
     <script src="https://kit.fontawesome.com/493718cddd.js" crossorigin="anonymous"></script>
+  
+    <link rel="stylesheet" href="profile_style.css">
+  
   </head>
   <body>
 
@@ -99,7 +102,9 @@ mysqli_close($db2);
     </header>
 
   <section>
-
+  <div class="icons2" >  
+            <a href="#"> <img src="back-removebg-preview.png" ></a>
+       </div>
     <section class="section_Body">
    
     <div class="row">

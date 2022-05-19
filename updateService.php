@@ -15,20 +15,35 @@
 	$price=$_POST['price'];
     $description=$_POST['description'];
 	//$note=$_POST['note'];
+///////////////
 
-   
-        if(isset($_FILES['photo'])){
-            if(isset($_FILES['photo']['tmp_name']  )){
-            $phptol2=$_FILES['photo']['tmp_name'];
-        $phptol2=addslashes(file_get_contents($phptol2));  }}
+if($_FILES['photo']['size']>0)  {
+    $phptol2=$_FILES['photo']['tmp_name'];
+    $phptol2=addslashes(file_get_contents( $phptol2));  
 
-            }
-    
-   
-   if( mysqli_query($db2,"UPDATE  servicemanager set Nservice='$Nservice', price ='$price' , description='$description',photo='$phptol2'  where  serviceID='$id'"));
-	echo '<script>alert("Service is Updated succsefully")</script>';
+
+if( mysqli_query($db2,"UPDATE  servicemanager set Nservice='$Nservice', price ='$price' , description='$description',photo='$phptol2'  where  serviceID='$id'"))
+echo '<script>alert("Service is Updated succsefully")</script>';
 
  header('location:showservice.php');
+}
+else{
+    $Nservice=$_POST['Nservice'];
+	$price=$_POST['price'];
+    $description=$_POST['description'];
+    if( mysqli_query($db2,"UPDATE  servicemanager set Nservice='$Nservice', price ='$price' , description='$description'  where  serviceID='$id'"))
+
+    echo '<script>alert("Service is Updated succsefully")</script>';
+
+    header('location:showservice.php');
+
+}
+
+}
+
+/////
+   
+        
   
     mysqli_close($db2);
 ?>

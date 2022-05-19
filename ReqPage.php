@@ -66,7 +66,7 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
   
 
 
-
+	
 
 
 <div class="out">
@@ -108,7 +108,7 @@ $db=mysqli_connect($host,$duus,$dbp,$dbname);
 		
 		<strong><p>add photo:</p></strong>
 		<img  id="addimg"   width="200" height="100"/>
-		<input type="file" id="myFile"  name="photo" >
+		<input type="file" id="myFile"  name="photo" accept="image/*" >
 	
 		
 		<!--  </label>-->

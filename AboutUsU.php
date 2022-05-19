@@ -50,7 +50,7 @@ mysqli_free_result($result);
    
 
     
-    
+    <link rel="stylesheet" href="profile_style.css">
   
 
     <!-- font awesome cdn link  -->
@@ -97,7 +97,11 @@ mysqli_free_result($result);
        <section>
 
 
+       <div class="icons2" >  
+            <a href="home-owner.html"> <img src="back-removebg-preview.png" ></a>
+       </div>
 
+       
        <p class="floa">
        <?php foreach($row as $appoi){  ?>
        <img style="margin-left:20%;"  width="600" height="300"  src="data:image/jpeg;base64,<?php echo base64_encode($appoi['phptol']); ?>"  >  

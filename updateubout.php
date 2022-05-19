@@ -10,27 +10,33 @@ if(!isset($_GET['id'] )){
     } 
    $id=$_GET['id'];
    if(isset($_POST['submit'])){
-    if(isset($_FILES['fileim'])){
-        if(isset($_FILES['fileim']['tmp_name']  )){
+     if($_FILES['fileim']['size']>0)  {
         $phptol=$_FILES['fileim']['tmp_name'];
-    $phptol=addslashes(file_get_contents($phptol));  }}
+    $phptol=addslashes(file_get_contents($phptol));  
     $about=$_POST['about'];
 	$vision=$_POST['vision'];
     $location=$_POST['location'];
+    
 	//$photoa=$_POST['photoa'];
+    
+    if( mysqli_query($db2,"UPDATE  aboutus set about='$about', vision='$vision' , location='$location', phptol='$phptol'  where aboutid='$id' "))
+	echo '<script>alert("about us is updated")</script>';  
+    header('location:AboutUsU.php');   
+ header('location:AboutUsM.php');
     }
     else{
-        echo "error";
-    }
-   if( mysqli_query($db2,"UPDATE  aboutus set about='$about', vision='$vision' , location='$location', phptol='$phptol'  where aboutid='$id' "))
+        $about=$_POST['about'];
+        $vision=$_POST['vision'];
+        $location=$_POST['location'];
+        if( mysqli_query($db2,"UPDATE  aboutus set about='$about', vision='$vision' , location='$location'  where aboutid='$id' "))
 	echo '<script>alert("about us is updated")</script>';  
     header('location:AboutUsU.php');   
  header('location:AboutUsM.php');
 
+    }
 
-    
+}
    
-    
 mysqli_close($db2);
 ?>
 
