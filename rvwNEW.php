@@ -116,6 +116,9 @@ echo' <br>';
 echo' <p> Write a review:</p>';   
 echo' <textarea name="feedb2" rows="1" cols="35" style="border: solid 1px grey;"></textarea>';
 echo'<input type="submit" id="submit" name="submit" class="submit" value ="addd" onsubmit="return(validationFunc6())" >';
+echo' <br>';
+echo'<button name="back" class="submit"><a href="Previous_Page.php" >Back </a></button>';
+
 echo'</div>'; echo'</div>'; echo'</div>';
 echo '</form>';
 //echo    '<script src="sc3.js"> </script>';
@@ -197,7 +200,7 @@ echo'</div>'; echo'</div>'; echo '</form>';
             </div>
             <h1 class="credit">&copy; copyright @ 2022 by software Engineers</h1>
         </div>
-        <script src="sc3.js"> </script>
+   
 </body>
     </html>
 <?php

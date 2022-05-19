@@ -1,7 +1,7 @@
 ///rvwNew user::::
 
 
-print("hiii");
+
 var theForm6 = document.testForm6;
 
 function validationFunc6() {

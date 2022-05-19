@@ -122,11 +122,11 @@ mysqli_close($db2);
             <?php foreach($row as $appoi){  ?>
            
                 <div class="card" style="width:65%; height=10%; margin-left:18%;">
-                    
-               <div class="img-container"> 
-                <img style="margin-left:2%; padding-bottom:10%;"  width="270" height="160" alt="could not dawnload" src="data:image/jpeg;base64,<?php echo base64_encode($appoi['photo']); ?>"  >  
-          
-            </div>
+                <div class="img-container"> 
+    <img style="margin-left:2%; padding-bottom:10%;"  width="270" height="160" alt="could not dawnload" src="data:image/jpeg;base64,<?php echo base64_encode($appoi['photo']); ?>"  >  
+
+</div>
+                 
             <?php  echo '<br> ';   ?>
                     <p style="font-size:23px;" ><?php echo"Name of service:" .$appoi['Nservice'];   ?></p>
                     <p style="font-size:23px;"><?php echo"price:" .$appoi['price'];  ?></p>
